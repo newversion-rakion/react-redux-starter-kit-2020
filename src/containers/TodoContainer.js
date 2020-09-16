@@ -1,16 +1,15 @@
-import { addTodo, deleteTodo } from 'actions/todoActions';
+import { fetchTodos } from 'actions/todoActions';
 import { connect } from 'react-redux';
-import AddTodoForm from 'routes/AddTodoForm';
+import TodoList from 'routes/TodoList';
 
 const mapStateToProps = state => ({
   todoList: state.todoReducer.todoList
 })
 
 const mapDispatchToProps = {
-  addTodo,
-  deleteTodo
+  fetchTodos
 }
 
-const ToDoContainer = connect(mapStateToProps, mapDispatchToProps)(AddTodoForm)
+const ToDoContainer = connect(mapStateToProps, mapDispatchToProps)(TodoList)
 
 export default ToDoContainer

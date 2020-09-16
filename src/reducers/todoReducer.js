@@ -1,4 +1,4 @@
-import { ADD_TODO, DELETE_TODO } from 'types';
+import { FETCH_TODOS } from 'types';
 
 const initialState = {
   todoList: []
@@ -6,18 +6,10 @@ const initialState = {
 
 export default function todoReducer(state = initialState, action) {
   switch (action.type) {
-    case ADD_TODO:
+    case FETCH_TODOS:
       return {
         ...state,
-        todoList: [
-          ...state.todoList,
-          action.payload
-        ],
-      }
-    case DELETE_TODO:
-      return {
-        ...state,
-        todoList: state.todoList.filter(todo => todo._id !== action.payload._id),
+        todoList: action.payload
       }
     default:
       return state

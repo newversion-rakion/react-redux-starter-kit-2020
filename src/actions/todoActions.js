@@ -1,20 +1,17 @@
-import { ADD_TODO, DELETE_TODO } from 'types';
+import { FETCH_TODOS } from 'types';
 
-export function addTodo(title) {
-  return {
-    type: ADD_TODO,
-    payload: {
-      _id: (new Date().getTime()),
-      title
-    }
-  }
-}
-
-export function deleteTodo(_id) {
-  return {
-    type: DELETE_TODO,
-    payload: {
-      _id
-    }
+export function fetchTodos() {
+  return (dispatch) => {
+    fetch('https://jsonplaceholder.cypress.io/todos')
+      .then(response => response.json())
+      .then(data => {
+        dispatch({
+          type: FETCH_TODOS,
+          payload: data
+        })
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   }
 }
