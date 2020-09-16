@@ -1,10 +1,10 @@
-import Button from 'components/Button';
+import ToDoListContainer from 'containers/TodoContainer';
 import React from 'react';
 function App() {
   return (
     <div className="App">
       <div className="container">
-        <Button type="submit">hihi</Button>
+        <ToDoListContainer />
       </div>
     </div>
   );

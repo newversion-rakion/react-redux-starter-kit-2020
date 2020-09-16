@@ -1,14 +1,18 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from 'store';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import GlobalStyle from './styles/global-styles';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    <GlobalStyle />
+    <Provider store={store}>
+      <App />
+      <GlobalStyle />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
