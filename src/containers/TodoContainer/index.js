@@ -10,6 +10,6 @@ const mapDispatchToProps = {
   fetchTodos
 }
 
-const ToDoContainer = connect(mapStateToProps, mapDispatchToProps)(TodoList)
+const TodoContainer = connect(mapStateToProps, mapDispatchToProps)(TodoList)
 
-export default ToDoContainer
+export default TodoContainer

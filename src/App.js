@@ -1,12 +1,20 @@
-import ToDoListContainer from 'containers/TodoContainer';
+import LoginContainer from 'containers/LoginContainer';
+import TodoContainer from 'containers/TodoContainer';
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
 function App() {
   return (
-    <div className="App">
-      <div className="container">
-        <ToDoListContainer />
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/login">
+          <LoginContainer />
+        </Route>
+        <Route path="/">
+          <TodoContainer />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
