@@ -1,9 +1,7 @@
 import Header from 'components/Header';
-import React, { useEffect } from 'react';
+import React from 'react';
 const Login = (props) => {
-  useEffect(() => {
-    console.log(props.todoList)
-  }, [])
+
   return (
     <div className="loginPage">
       <Header />
